@@ -31,7 +31,7 @@ router.post('/new', async (req, res) => {
   console.log(body)
   await Property.create({
     ...body,
-    description: body.description.split(' '),
+    description: body.description,
     owner: '63e108a5cfca86248667cacf',
   })
 
