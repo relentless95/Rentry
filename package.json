@@ -7,6 +7,7 @@
     "dev": "nodemon server.js"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.6",
     "dotenv": "^16.0.3",
     "ejs": "^3.1.8",
@@ -18,5 +19,18 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.20"
-  }
+  },
+  "description": "Welcome to the ultimate rental houses platform! Whether you're looking for a short-term rental for your next vacation or you're a property owner looking to rent out your property, this website has got you covered. With features that are easy to use and a user-friendly interface, renting a house or apartment has never been this convenient.",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/relentless95/Rentry.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/relentless95/Rentry/issues"
+  },
+  "homepage": "https://github.com/relentless95/Rentry#readme"
 }
