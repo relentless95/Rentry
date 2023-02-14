@@ -1,0 +1,13 @@
+<h1>Login</h1>
+<form
+  style="display: flex; flex-direction: column"
+  method="POST"
+  action="/auth/login"
+>
+  <!-- auth/signup is the route where we want to post-->
+  <label
+    >Username:<input type="text" name="username"/></label
+  >
+  <label>Password:<input type="password" name="password" required /></label>
+  <button type="submit">Login</button>
+</form>
