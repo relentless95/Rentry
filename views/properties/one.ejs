@@ -3,7 +3,8 @@
 <h2><%= propertyFound.description %></h2>
 <h2><%= propertyFound.location %></h2>
 <h2><%= propertyFound.price %></h2>
-<a href="/properties/<%- propertyFound._id %>/update">Modify</a>
+<form method="POST" action="/properties/<%- propertyFound._id %>/update">
+  <button type="submit">Update</button>
 <form method="POST" action="/properties/<%- propertyFound._id %>/delete">
   <button type="submit">Delete</button>
 </form>

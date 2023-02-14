@@ -57,7 +57,7 @@ router.post('/:propertyId/update', async (req, res) => {
 router.post('/:propertyId/delete', async (req, res) => {
   await Property.findByIdAndDelete(req.params.propertyId)
 
-  res.redirect('/recipes')
+  res.redirect('/properties')
 })
 
 module.exports = router;
