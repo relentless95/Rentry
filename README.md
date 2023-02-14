@@ -74,7 +74,7 @@ npm install
 5. Add a .env file with the following variables:
 
 PORT=3000
-MONGODB_URI=mongodb://localhost:27017/rental-houses
+MONGODB_URI=mongodb://localhost:27017/rentry
 
 6. Start the development server
 
