@@ -1,41 +1,34 @@
-const propertySchema = new Schema({
+const { Schema, model } = require ('mongoose')
+
+const propertySchema = new Schema(
+  {
     title: {
       type: String,
-      required: true
+      required: true,
+      unique: true,
     },
     description: {
-      type: String,
-      required: true
+      type: [String],
+      required: true,
     },
     location: {
       type: String,
-      required: true
-    },
-    images: {
-      type: [String],
-      required: true
+      required: true,
     },
     price: {
       type: Number,
-      required: true
+      required: true,
     },
-    bedrooms: {
-      type: Number,
-      required: true
+    owner: {
+      type: Schema.Types.ObjectId,
+      required: 'User',
     },
-    bathrooms: {
-      type: Number,
-      required: true
-    },
-    bookings: [{ type: Schema.Types.ObjectId, ref: 'Booking' }],
-    rating: {
-      type: Number,
-      default: 0,
-      min: 0,
-      max: 5
-    },
-    reviews: [{ type: Schema.Types.ObjectId, ref: 'Review' }]
-  });
+  },
+  {
+    // this second object adds extra properties: `createdAt` and `updatedAt`
+    timestamps: true,
+  }
+)
   
 const Property = model('Property', propertySchema);
 

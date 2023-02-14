@@ -1,0 +1,13 @@
+<h1>Property</h1>
+<h2><%= propertyFound.title %></h2>
+<h2><%= propertyFound.description %></h2>
+<h2><%= propertyFound.location %></h2>
+<h2><%= propertyFound.price %></h2>
+<a href="/properties/<%- propertyFound._id %>/update">Modify</a>
+<form method="POST" action="/properties/<%- propertyFound._id %>/delete">
+  <button type="submit">Delete</button>
+</form>
+<div>
+  <p>About the owner</p>
+  <h4><%= propertyFound.owner.firstname %></h4>
+</div>

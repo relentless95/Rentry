@@ -1,8 +1,9 @@
 # Description #
 
-Welcome to the ultimate rental houses platform! Whether you're looking for a short-term rental for your next vacation or you're a property owner looking to rent out your property, this website has got you covered. With features that are easy to use and a user-friendly interface, renting a house or apartment has never been this convenient.
+Welcome to the ultimate rental houses platform! 
+If you're a property owner looking to rent out your property, this website has got you covered. With features that are easy to use and a user-friendly interface, renting a house or apartment has never been this convenient.
 
-The website has been designed keeping the needs of both renters and property owners in mind. Renters can easily search for properties based on their preferred location, dates, and other parameters, and property owners can list their properties and manage bookings from one central location.
+The website has been designed keeping the needs of property owners on mind, so owners can list their properties and manage bookings from one central location.
 
 
 
