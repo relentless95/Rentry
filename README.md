@@ -23,9 +23,6 @@ Renters can book and reserve properties they're interested in, and property owne
 ### Reviews and ratings for properties:
 Renters can rate and review properties after their stay, and these ratings and reviews are displayed on the property listing for other renters to see.
 
-### Communication between renters and property owners:
-Renters and property owners can communicate through the website, ensuring a smooth rental process from start to finish.
-
 
 
 # Technologies used #
