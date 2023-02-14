@@ -8,22 +8,22 @@ The website has been designed keeping the needs of both renters and property own
 
 # Key features #
 
-## User registration and authentication:
+### User registration and authentication:
 Users can register and log in to the website with their email and password. The password is securely stored using bcrypt hashing.
 
-## Property listing by property owners:
+### Property listing by property owners:
 Property owners can list their properties on the website, including details such as the location, description, images, availability, and pricing.
 
-## Search for properties:
+### Search for properties:
 Renters can search for properties based on their preferred location, dates, and other parameters, such as the number of bedrooms and bathrooms. The search results can be filtered based on the price range, property type, and other criteria.
 
-## Booking and reservation of properties:
+### Booking and reservation of properties:
 Renters can book and reserve properties they're interested in, and property owners can manage the bookings from their dashboard. The website also includes a payment processing system for accepting payments for the booking.
 
-## Reviews and ratings for properties:
+### Reviews and ratings for properties:
 Renters can rate and review properties after their stay, and these ratings and reviews are displayed on the property listing for other renters to see.
 
-## Communication between renters and property owners:
+### Communication between renters and property owners:
 Renters and property owners can communicate through the website, ensuring a smooth rental process from start to finish.
 
 
@@ -33,8 +33,11 @@ Renters and property owners can communicate through the website, ensuring a smoo
 The website has been built using the latest technologies, including Node.js, MongoDB, Mongoose, and Express. The backend has been developed using Node.js, and the data is stored in a MongoDB database using Mongoose. The frontend has been developed using Express, and the website is hosted on a cloud platform called Heroku.
 
 Node.js
+
 MongoDB
+
 Mongoose
+
 Express
 
 
