@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details</title>
+  </head>
+  <body>
+    <h1>User Details</h1>
+    <ul>
+      <li>Username: <%= user.username %></li>
+      <li>Email: <%= user.email %></li>
+    </ul>
+    <a href="/user/<%= user._id %>/edit">Edit User</a>
+    <form method="POST" action="/user/<%= user._id %>/delete">
+      <button type="submit">Delete User</button>
+    </form>
+  </body>
+</html>

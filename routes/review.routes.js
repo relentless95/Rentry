@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const Review = require('../models/review');
+const Review = require('../models/review.model.js');
 
 // Get all reviews
-router.get('/', async (req, res) => {
+router.get('/review', async (req, res) => {
   try {
     const reviews = await Review.find();
     res.json(reviews);
@@ -13,12 +13,12 @@ router.get('/', async (req, res) => {
 });
 
 // Get a specific review by ID
-router.get('/:id', getReview, (req, res) => {
+router.get('/review/:id', getReview, (req, res) => {
   res.json(res.review);
 });
 
 // Create a new review
-router.post('/', async (req, res) => {
+router.post('/review', async (req, res) => {
   const review = new Review({
     user_id: req.body.user_id,
     property_id: req.body.property_id,
@@ -35,7 +35,7 @@ router.post('/', async (req, res) => {
 });
 
 // Update a specific review by ID
-router.patch('/:id', getReview, async (req, res) => {
+router.patch('/review/:id', getReview, async (req, res) => {
   if (req.body.rating != null) {
     res.review.rating = req.body.rating;
   }
@@ -53,7 +53,7 @@ router.patch('/:id', getReview, async (req, res) => {
 });
 
 // Delete a specific review by ID
-router.delete('/:id', getReview, async (req, res) => {
+router.delete('/review/:id', getReview, async (req, res) => {
   try {
     await res.review.remove();
     res.json({ message: 'Review deleted' });

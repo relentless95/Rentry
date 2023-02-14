@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const Booking = require('../models/booking');
+const Booking = require('../models/booking.model.js');
 
 // Create a new booking
-router.post('/bookings', async (req, res) => {
+router.post('/booking', async (req, res) => {
     try {
       const booking = new Booking(req.body);
       await booking.save();
@@ -14,7 +14,7 @@ router.post('/bookings', async (req, res) => {
   });
   
 // Get all bookings
-router.get('/bookings', async (req, res) => {
+router.get('/booking', async (req, res) => {
     try {
       const bookings = await Booking.find();
       res.send(bookings);
@@ -24,7 +24,7 @@ router.get('/bookings', async (req, res) => {
   });
   
 // Get a specific booking by ID
-router.get('/bookings/:id', async (req, res) => {
+router.get('/booking/:id', async (req, res) => {
     try {
       const booking = await Booking.findById(req.params.id);
       if (!booking) {
@@ -37,7 +37,7 @@ router.get('/bookings/:id', async (req, res) => {
   });
   
 // Update a specific booking by ID
-router.post('/bookings/:id', async (req, res) => {
+router.post('/booking/:id', async (req, res) => {
     try {
       const booking = await Booking.findByIdAndUpdate(req.params.id, req.body, {
         new: true,
@@ -53,7 +53,7 @@ router.post('/bookings/:id', async (req, res) => {
   });
   
 // Delete a specific booking by ID
-router.post('/bookings/:id/delete', async (req, res) => {
+router.post('/booking/:id/delete', async (req, res) => {
     try {
       const booking = await Booking.findByIdAndDelete(req.params.id);
       if (!booking) {

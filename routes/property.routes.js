@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const Property = require('../models/property');
+const Property = require('../models/property.model.js');
 
 // Create a new property
-router.post('/', async (req, res) => {
+router.post('/property', async (req, res) => {
     try {
       const property = new Property(req.body);
       await property.save();
@@ -14,7 +14,7 @@ router.post('/', async (req, res) => {
   });
   
 // Get all properties
-router.get('/', async (req, res) => {
+router.get('/property', async (req, res) => {
     try {
       const properties = await Property.find();
       res.json(properties);
@@ -24,12 +24,12 @@ router.get('/', async (req, res) => {
   });
   
 // Get a specific property by ID
-router.get('/:id', getProperty, (req, res) => {
+router.get('/property/:id', getProperty, (req, res) => {
     res.json(res.property);
   });
   
 // Update a specific property by ID
-router.patch('/:id', getProperty, async (req, res) => {
+router.patch('/property/:id', getProperty, async (req, res) => {
     if (req.body.name != null) {
       res.property.name = req.body.name;
     }
@@ -48,7 +48,7 @@ router.patch('/:id', getProperty, async (req, res) => {
   });
   
 // Delete a specific property by ID
-router.delete('/:id', getProperty, async (req, res) => {
+router.delete('/property/:id', getProperty, async (req, res) => {
     try {
       await res.property.remove();
       res.json({ message: 'Property deleted successfully' });

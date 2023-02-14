@@ -27,7 +27,6 @@ const propertySchema = new Schema({
       type: Number,
       required: true
     },
-    owner: { type: Schema.Types.ObjectId, ref: 'User' },
     bookings: [{ type: Schema.Types.ObjectId, ref: 'Booking' }],
     rating: {
       type: Number,
