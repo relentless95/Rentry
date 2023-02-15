@@ -1,12 +1,24 @@
-body {
-  padding: 50px;
+/* body {
+  padding: 0px;
+  margin: auto;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color:#F0FFFF;
+} */
+
+/* .navbar-dark {
+  background-color: #33FFDE;
+} */
+
+:root {
+  --bs-font-sans-serif: 'Rubik', sans-serif
 }
 
-a {
+/* a {
   color: #00b7ff;
 }
 
 h1 {
   color: 15px;
-}
+} */
+
+
