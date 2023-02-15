@@ -1,0 +1,13 @@
+<h1>All bookings</h1>
+<% if (!hopper.length) { %> There is any booking <% } %> <% hopper.forEach(booking => { %>
+<div style="border: 1px solid black; margin: 1rem; padding: 1rem">
+  <h2><%=booking.property%></h2>
+  <h2><%=booking.user%></h2>
+  <h2><%=booking.checkIn%></h2>
+  <h2><%=booking.checkOut%></h2>
+  <a href="/bookings/<%- booking._id %>">Details</a>
+</div>
+<% }) %>
+<form>
+  <button type="button" onclick="window.history.back()">Go Back</button>
+</form>

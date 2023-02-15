@@ -30,7 +30,7 @@ router.post('/new', async (req, res) => {
   const body = req.body
   console.log(body)
 
-  //const owner = req.session.userId;
+ // const owner = req.session.userId;
 
   await Property.create({
     ...body,

@@ -1,0 +1,32 @@
+<form method="POST" action="<% if (update) { %>
+    /bookings/<%- booking._id %>/update
+   <% } else { %>
+    /bookings/new
+  <% } %>">
+    <label>
+      Property:
+      <input type="text" name="Property" value="<% if (update) { %><%= booking.property %><% } %>" />
+    </label>
+    <label>
+      Owner:
+      <input type="text" name="User" value="<% if (update) { %><%= booking.user %><% } %>" />
+    </label>
+    <label>
+      CheckIn:
+      <input type="date" name="checkIn" value="<% if (update) { %><%= booking.checkIn %><% } %>" />
+    </label>
+    <label>
+      CheckOut:
+      <input type="date" name="checkOut" value="<% if (update) { %><%= booking.checkOut %><% } %>" />
+    </label>
+    <button type="submit">
+      <% if (update) { %>
+        Update booking
+      <% } else { %>
+        Create new booking
+      <% } %>
+    </button>
+  </form>
+  <form>
+    <button type="button" onclick="window.history.back()">Go Back</button>
+  </form>

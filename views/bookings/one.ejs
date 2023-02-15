@@ -1,0 +1,19 @@
+<h1>Booking</h1>
+<h2><%= bookingFound.property %></h2>
+<h2><%= bookingFound.user %></h2>
+<h2><%= bookingFound.checkIn %></h2>
+<h2><%= bookingFound.checkOut %></h2>
+<form method="GET" action="/bookings/<%- bookingFound._id %>/update">
+    <button type="submit">Update</button>
+  </form>
+  <br>
+  <form method="GET" action="/bookings/<%- bookingFound._id %>/delete">
+    <button type="submit">Delete</button>
+    </form>
+    <br>
+<form method="GET" action="/bookings/<%- bookingFound._id %>/new">
+    <button type="submit">Book this property</button>
+</form>
+<form>
+    <button type="button" onclick="window.history.back()">Go Back</button>
+</form>
