@@ -54,7 +54,8 @@ router.post('/:propertyId/update', async (req, res) => {
 })
   
 // Delete a specific property by ID
-router.post('/:propertyId/delete', async (req, res) => {
+router.get('/:propertyId/delete', async (req, res) => {
+  console.log('blabla')
   await Property.findByIdAndDelete(req.params.propertyId)
 
   res.redirect('/properties')
