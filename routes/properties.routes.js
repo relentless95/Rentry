@@ -1,6 +1,6 @@
 const express = require('express');
 const Property = require('../models/Property.model');
-const User = require('../models/User.model')
+const User = require('../models/User.model');
 const router = express.Router();
 
 // Get all properties
