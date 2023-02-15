@@ -29,10 +29,13 @@ router.get('/:propertyId', async (req, res) => {
 router.post('/new', async (req, res) => {
   const body = req.body
   console.log(body)
+
+  const owner = req.session.userId;
+
   await Property.create({
     ...body,
     description: body.description,
-    owner: '63e108a5cfca86248667cacf',
+    owner: owner,
   })
 
   res.redirect('/properties')
