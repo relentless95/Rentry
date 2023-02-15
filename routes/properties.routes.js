@@ -47,7 +47,7 @@ router.get('/:propertyId/update', async (req, res) => {
 router.post('/:propertyId/update', async (req, res) => {
   await Property.findByIdAndUpdate(req.params.propertyId, {
     ...req.body,
-    description: req.body.description.split(' '),
+    description: req.body.description,
   })
 
   res.redirect(`/properties/${req.params.propertyId}`)
