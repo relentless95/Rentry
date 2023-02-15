@@ -30,12 +30,12 @@ router.post('/new', async (req, res) => {
   const body = req.body
   console.log(body)
 
-  const owner = req.session.userId;
+  //const owner = req.session.userId;
 
   await Property.create({
     ...body,
     description: body.description,
-    owner: owner,
+    owner: '63ebbf7c5ce2ea8ac0f0a14f',
   })
 
   res.redirect('/properties')
@@ -58,7 +58,6 @@ router.post('/:propertyId/update', async (req, res) => {
   
 // Delete a specific property by ID
 router.get('/:propertyId/delete', async (req, res) => {
-  console.log('blabla')
   await Property.findByIdAndDelete(req.params.propertyId)
 
   res.redirect('/properties')
