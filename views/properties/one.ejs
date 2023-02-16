@@ -1,0 +1,20 @@
+<h1>Property</h1>
+<h2><%= propertyFound.title %></h2>
+<h2><%= propertyFound.description %></h2>
+<h2><%= propertyFound.location %></h2>
+<h2><%= propertyFound.price %></h2>
+<h2><%= propertyFound.owner %></h2>
+<form method="GET" action="/properties/<%- propertyFound._id %>/update">
+  <button type="submit">Update</button>
+</form>
+<br>
+<form method="GET" action="/properties/<%- propertyFound._id %>/delete">
+  <button type="submit">Delete</button>
+</form>
+<br>
+<a href="/bookings/new">Book this property</a>
+<br>
+<br>
+<form>
+  <button type="button" onclick="window.history.back()">Go Back</button>
+</form>
