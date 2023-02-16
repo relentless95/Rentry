@@ -19,7 +19,7 @@ const propertySchema = new Schema(
       type: Number,
       required: true,
     },
-    owner: {
+    user: {
       type: Schema.Types.ObjectId,
       required: 'User',
     },

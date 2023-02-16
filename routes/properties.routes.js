@@ -21,7 +21,7 @@ router.get('/new', async (req, res, next) => {
   
 // Get a specific property by ID
 router.get('/:propertyId', async (req, res) => {
-  const propertyFound = await Property.findById(req.params.propertyId).populate('owner')
+  const propertyFound = await Property.findById(req.params.propertyId).populate('user')
   console.log({ propertyFound })
   res.render('properties/one', { propertyFound })
 })
@@ -30,12 +30,12 @@ router.post('/new', async (req, res) => {
   const body = req.body
   console.log(body)
 
- // const owner = req.session.userId;
+ // const user = req.session.userId;
 
   await Property.create({
     ...body,
     description: body.description,
-    owner: '63ebbf7c5ce2ea8ac0f0a14f',
+    user: '63ebbf7c5ce2ea8ac0f0a14f',
   })
 
   res.redirect('/properties')
