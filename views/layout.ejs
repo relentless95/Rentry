@@ -26,17 +26,13 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/stylesheets/style.css" />
-    <style>
-      .hidden {
-        display: none;
-      }
-    </style>
+    
   </head>
 
   <body>
-    <div class="container"></div>
-
+ 
     <nav class="navbar navbar-expand-md navbar-dark bg-success">
+      <div class="container">
       <a href="#" class="navbar-brand">
             <img
       src="./images/logo-no-background.svg"
@@ -45,7 +41,7 @@
       height="50"
       class="d-inline-block-align-top"
     />
-        <span class="sr-only">Rentry</span>
+        <span class="sr-only text-dark">Rentry</span>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#toggleMobileMenu" aria-controls="toggleMobileMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -53,18 +49,19 @@
       <div class="collapse navbar-collapse" id="toggleMobileMenu">
         <ul class="navbar-nav ms-auto text-center">
           <li class="nav-item">
-            <a class="nav-link text-black" href="#">Home</a>
+            <a class="nav-link text-dark" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-black" href="#">Rent</a>
+            <a class="nav-link text-dark" href="#">Rent</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-black" href="#">My profile</a>
+            <a class="nav-link text-dark" href="#">My profile</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-black" href="#">Logout</a>
+            <a class="nav-link text-dark" href="#">Logout</a>
           </li>
         </ul>
+      </div>
       </div>
     </nav>
 
@@ -72,8 +69,12 @@
     <div class="d-flex align-items-center">
       <div class="container">
         <%- body %>
-        <footer class="d-flex flex-column flex-sm-row justify-content-between align-items-center py-3 my-4 border-top text-center"><p>Build by TBM</p></footer>
       </div>
+      <footer class="footer">
+        <div class="container text-center">
+          <span class="text-muted">&copy; Built with ❤️ by TBM</span>
+        </div>
+        </footer>
     </div>
 
     <!-- <script src="/js/script.js"></script> -->

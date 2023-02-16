@@ -1,13 +1,25 @@
-<h1>Login</h1>
-<form
-  style="display: flex; flex-direction: column"
-  method="POST"
-  action="/auth/login"
->
-  <!-- auth/signup is the route where we want to post-->
-  <label
-    >Username:<input type="text" name="username"/></label
-  >
-  <label>Password:<input type="password" name="password" required /></label>
-  <button type="submit">Login</button>
-</form>
+<main class="form-signin w-100 m-auto">
+  <h1 class="text-center">Login</h1>
+  <form method="POST" action="/auth/login">
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+      <input type="email" id="form2Example1" class="form-control" name="username" />
+      <label class="form-label" for="form2Example1">Username</label>
+    </div>
+  
+    <!-- Password input -->
+    <div class="form-outline mb-4">
+      <input type="password" id="form2Example2" class="form-control" name="password" />
+      <label class="form-label" for="form2Example2">Password</label>
+    </div>
+  
+    <!-- Submit button -->
+    <button type="button" class="w-100 btn btn-lg btn-primary">Login</button>
+  
+    <!-- Register buttons -->
+    <div class="text-center py-3">
+      <p>Not a member? <a href="#!">Register</a></p>
+    </div>
+  </form>
+  </main>
+  
