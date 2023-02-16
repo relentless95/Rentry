@@ -26,16 +26,17 @@ router.get('/:bookingId', async (req, res) => {
   res.render('bookings/one', { bookingFound });
 });
 
+// Create a new booking
 router.post('/new', async (req, res) => {
   const body = req.body;
   console.log(body);
 
-  // const user = req.session.userId;
+  const user = req.session.userId;
 
   await Booking.create({
     ...body,
     description: body.description,
-    user: '63ebbf7c5ce2ea8ac0f0a14f',
+    user: user,
   });
 
   res.redirect('/bookings');
