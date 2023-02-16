@@ -1,4 +1,5 @@
 const express = require('express');
+const { isLoggedIn } = require('../middleware/route-guard');
 const router = express.Router();
 
 /* GET home page */
@@ -6,11 +7,14 @@ router.get("/", (req, res, next) => {
   res.render("index");
 });
 
-router.get("/profile", (req, res, next) => { // the last call back should send something to the client
+router.get("/profile",isLoggedIn, (req, res, next) => { // the last call back should send something to the client
   console.log("SESSION =====> ", req.session)
   // if(!req.session.user){ // this was when there was no middle ware
   //   res.redirect('/auth/login')
   // } 
+  // console.log('the body is', req.body)
+  // const user = req.body.username
+  // console.log('the user here is is', user)
   res.render("profile", { user: req.session.user });
   console.log(req.session.user)
   

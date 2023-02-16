@@ -2,13 +2,14 @@ const express = require("express");
 const bcrypt = require("bcryptjs");
 const router = express.Router();
 const User = require("../models/User.model");
+const { isLoggedOut } = require("../middleware/route-guard");
 
-/* GET home page */
-router.get("/signup", (req, res, next) => {
+/* GET sign up */
+router.get("/signup",isLoggedOut, (req, res, next) => {
   res.render("auth/signup");
 });
 
-router.post("/signup", async (req, res, next) => {
+router.post("/signup",isLoggedOut, async (req, res, next) => {
   const body = { ...req.body };
   console.log(body)
 
@@ -56,7 +57,7 @@ router.post("/signup", async (req, res, next) => {
   }
 });
 
-router.get("/login", (req, res, next) => {
+router.get("/login",isLoggedOut, (req, res, next) => {
   res.render("auth/login");
 });
 
@@ -78,7 +79,8 @@ router.post("/login", async (req, res, next) => {
 
       req.session.user = tempUser;
     //   console.log('reaches here')
-      res.redirect("/home");
+      console.log('worked')
+      res.redirect("/profile");
     }
   } else {
     res.render( "auth/login", {errorMessage: 'inside login else'}

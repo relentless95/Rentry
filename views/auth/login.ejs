@@ -1,25 +1,29 @@
-<main class="form-signin w-100 m-auto">
-  <h1 class="text-center">Login</h1>
-  <form method="POST" action="/auth/login">
-    <!-- Email input -->
-    <div class="form-outline mb-4">
-      <input type="email" id="form2Example1" class="form-control" name="username" />
-      <label class="form-label" for="form2Example1">Username</label>
-    </div>
-  
-    <!-- Password input -->
-    <div class="form-outline mb-4">
-      <input type="password" id="form2Example2" class="form-control" name="password" />
-      <label class="form-label" for="form2Example2">Password</label>
-    </div>
-  
-    <!-- Submit button -->
-    <button type="button" class="w-100 btn btn-lg btn-primary">Login</button>
-  
-    <!-- Register buttons -->
-    <div class="text-center py-3">
-      <p>Not a member? <a href="#!">Register</a></p>
-    </div>
-  </form>
-  </main>
-  
+<div class="d-flex justify-content-center align-items-center" style="height: 80vh;">
+  <main class="form-signin w-100 m-auto">
+    <h1 class="text-center">Login</h1>
+    <form method="POST" action="/auth/login">
+      <!-- username input -->
+      <div class="form-outline mb-4">
+        <label class="form-label" for="form2Example1">Username:</label>
+        <input type="text" id="form2Example1" class="form-control" name="username" placeholder="Enter your username" required />
+        
+      </div>
+    
+      <!-- Password input -->
+      <div class="form-outline mb-4">
+        <label class="form-label" for="form2Example2">Password:</label>
+        <input type="password" id="form2Example2" class="form-control" name="password" placeholder="Enter your password" required/>
+      </div>
+    
+      <!-- Submit button -->
+      <button type="submit" class="w-100 btn btn-lg btn-dark">Login</button>
+    
+      <!-- Register buttons -->
+      <div class="text-center py-3">
+        <p>Not a member? <a href="/auth/signup">signup</a></p>
+      </div>
+    </form>
+    </main>
+</div>
+
+ 
