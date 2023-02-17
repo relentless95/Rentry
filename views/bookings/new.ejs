@@ -5,10 +5,7 @@
     <input type="text" class="form-control" id="property" placeholder="Enter property" name="property" value="<% if (update) { %><%= booking.property %><% } %>">
   </div>
   
-  <div class="form-group">
-    <label for="user">Owner:</label>
-    <input type="text" class="form-control" id="user" placeholder="Enter owner" name="user" value="<% if (update) { %><%= booking.user %><% } %>">
-  </div>
+  
   <div class="form-group">
     <label for="checkin">CheckIn:</label>
     <input type="date" class="form-control" id="checkin" name="checkIn" value="<% if (update) { %><%= booking.checkIn %><% } %>">

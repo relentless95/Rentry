@@ -3,6 +3,12 @@ const Booking = require('../models/Booking.model');
 const User = require('../models/User.model');
 const router = express.Router();
 
+// router.get('/new', async(req, res, next)=>{
+//   try{
+//     const
+//   }
+// })
+
 // Get all bookings
 router.get('/', async (req, res) => {
   try {
@@ -35,7 +41,7 @@ router.post('/new', async (req, res) => {
   await Booking.create({
     ...body,
     description: body.description,
-    user: '63ebbf7c5ce2ea8ac0f0a14f',
+    // user: '63ebbf7c5ce2ea8ac0f0a14f',
   });
 
   res.redirect('/bookings');

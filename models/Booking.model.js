@@ -7,11 +7,11 @@ const bookingSchema = new Schema(
         ref: 'Property',
         required: true
     },
-        user: {
-        type: Schema.Types.ObjectId,
-        ref: 'User',
-        required: true
-    },
+    //     user: {
+    //     type: Schema.Types.ObjectId,
+    //     ref: 'User',
+    //     required: true
+    // },
         checkIn: {
         type: Date,
         required: true
