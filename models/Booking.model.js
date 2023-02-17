@@ -7,9 +7,9 @@ const bookingSchema = new Schema(
         ref: 'Property',
         required: true
     },
-        propertyName: {
-            type: String,
-        },
+        // propertyName: {
+        //     type: String,
+        // },
 
         user: {
         type: Schema.Types.ObjectId,
@@ -27,9 +27,9 @@ const bookingSchema = new Schema(
     }
 )
 
-bookingSchema.pre('find', function() {
-    this.populate('property', 'name');
-  });
+// bookingSchema.pre('find', function() {
+//     this.populate('property', 'name');
+//   });
   
 const Booking = model('Booking', bookingSchema);
 

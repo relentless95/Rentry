@@ -6,7 +6,7 @@ const { isLoggedOut, isLoggedIn } = require("../middleware/route-guard");
 
 /* GET sign up */
 router.get("/signup",isLoggedOut, (req, res, next) => {
-  res.render("auth/signup");
+  res.render("auth/signup", {user: undefined});
 });
 
 router.post("/signup",isLoggedOut, async (req, res, next) => {
@@ -18,6 +18,7 @@ router.post("/signup",isLoggedOut, async (req, res, next) => {
       errorMessage: "Password must be at least 6 characters long",
     //   body: req.body,
       userData: req.body,
+      user: undefined,
     });
   } else {
     const salt = await bcrypt.genSalt(13);
@@ -39,18 +40,20 @@ router.post("/signup",isLoggedOut, async (req, res, next) => {
       console.log('inside create')
     } catch (error) {
       if (error.code === 1100) {
-        console.log("duplicate!");
+        // console.log("duplicate!");
         res.render("auth/signup", {
           error: "username already used ",
         //   body: req.body,
         userData: req.body,
+        user: undefined
 
         });
       } else {
         // console.log(error);
         res.render("auth/signup", {
-          errorMessage: 'inside else',
+          errorMessage: 'Username or password already exist. Change your password or username',
           userData: req.body,
+          user: undefined
         });
       }
     }
@@ -58,7 +61,7 @@ router.post("/signup",isLoggedOut, async (req, res, next) => {
 });
 
 router.get("/login",isLoggedOut, (req, res, next) => {
-  res.render("auth/login");
+  res.render("auth/login", {user: req.session.user  || undefined});
 });
 
 router.post("/login", async (req, res, next) => {
@@ -83,7 +86,7 @@ router.post("/login", async (req, res, next) => {
       res.redirect("/profile");
     }
   } else {
-    res.render( "auth/login", {errorMessage: 'inside login else'}
+    res.render( "auth/login", {errorMessage: 'verify your password or username', user: "undefined"}
         
     )
   }

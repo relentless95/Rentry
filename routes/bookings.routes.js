@@ -3,7 +3,7 @@ const Booking = require('../models/Booking.model');
 const User = require('../models/User.model');
 const router = express.Router();
 
-// router.get('/new', async(req, res, next)=>{
+// router.get('/', async(req, res, next)=>{
 //   try{
 //     const
 //   }
