@@ -86,7 +86,7 @@ router.post("/login", async (req, res, next) => {
       res.redirect("/profile");
     }
   } else {
-    res.render( "auth/login", {errorMessage: 'verify your password or username', user: "undefined"}
+    res.render( "auth/login", {errorMessage: 'verify your password or username', user: undefined}
         
     )
   }
