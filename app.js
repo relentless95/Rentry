@@ -41,3 +41,4 @@ app.use('/bookings', bookingsRoutes)
 require('./error-handling')(app)
 
 module.exports = app
+

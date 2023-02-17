@@ -2,7 +2,7 @@ const express = require("express");
 const bcrypt = require("bcryptjs");
 const router = express.Router();
 const User = require("../models/User.model");
-const { isLoggedOut } = require("../middleware/route-guard");
+const { isLoggedOut, isLoggedIn } = require("../middleware/route-guard");
 
 /* GET sign up */
 router.get("/signup",isLoggedOut, (req, res, next) => {
@@ -72,7 +72,7 @@ router.post("/login", async (req, res, next) => {
     console.log('reaches here1')
 
     if (bcrypt.compareSync(body.password, user.passwordHash)) {
-      const tempUser = {username: user.username, email: user.email};
+      const tempUser = {username: user.username, email: user.email, id: user._id};
     //   console.log(tempUser)
     console.log('reaches here2')
     console.log(req.session)
@@ -88,5 +88,17 @@ router.post("/login", async (req, res, next) => {
     )
   }
 });
+
+router.get('/logout',isLoggedIn, (req, res)=>{
+  console.log("logout route was triggered")
+  console.log('logging out')
+  req.session.destroy(err=>{
+    if(err)
+    next(err)
+    console.log("is here")
+    res.redirect('/')
+  })
+})
+
 
 module.exports = router;

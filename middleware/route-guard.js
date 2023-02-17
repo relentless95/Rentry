@@ -1,7 +1,7 @@
 // checks if the user is logged in when trying to access a specific page
 const isLoggedIn = (req, res, next)=>{
     if(!req.session.user){
-        console.log('i am loggedIn')
+        console.log('i am logged out')
         return res.redirect('/auth/login');
     }
     next();
@@ -10,7 +10,7 @@ const isLoggedIn = (req, res, next)=>{
 
 const isLoggedOut = (req, res, next)=>{
     if(req.session.user){
-        console.log('i am loggedOut')
+        console.log('i am logged in')
         return res.redirect('/')
     }
     next();
