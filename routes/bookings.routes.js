@@ -25,6 +25,7 @@ router.get('/new', async (req, res, next) => {
   res.render('bookings/new', { update: false });
 });
 
+
 // Get a specific booking by ID
 router.get('/:bookingId', async (req, res) => {
   const bookingFound = await Booking.findById(req.params.bookingId).populate('user');
