@@ -10,7 +10,7 @@ router.get("/", async (req, res) => {
   try {
     const allProperties = await Property.find();
     console.log("All properties :", allProperties);
-    res.render("properties/all", { hopper: allProperties, user: req.session.user});
+    res.render("properties/all", { hopper: allProperties, user: req.session.user || undefined});
   } catch (error) {
     console.log("Route to all properties", error);
   }

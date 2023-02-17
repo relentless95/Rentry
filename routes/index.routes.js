@@ -37,7 +37,7 @@ router.get("/properties", async (req, res, next) => {
   try {
     const allProperties = await Property.find()
     console.log('All properties :', allProperties)
-    res.render('properties/all', { hopper: allProperties })
+    res.render('properties/all', { hopper: allProperties, user:req.session.user  })
   } catch (error) {
     console.log('Route to all properties', error)
   }

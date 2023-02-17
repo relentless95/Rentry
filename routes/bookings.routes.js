@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
   try {
     const allBookings = await Booking.find();
     console.log('All bookings:', allBookings);
-    res.render('bookings/all', { hopper: allBookings });
+    res.render('bookings/all', { hopper: allBookings, user: req.session.user  });
   } catch (error) {
     console.log('Route to all bookings', error);
   }
@@ -22,14 +22,14 @@ router.get('/', async (req, res) => {
 
 // Create a new booking
 router.get('/new', async (req, res, next) => {
-  res.render('bookings/new', { update: false });
+  res.render('bookings/new', { update: false, user:req.session.user  });
 });
 
 // Get a specific booking by ID
 router.get('/:bookingId', async (req, res) => {
   const bookingFound = await Booking.findById(req.params.bookingId).populate('user');
   console.log({ bookingFound });
-  res.render('bookings/one', { bookingFound });
+  res.render('bookings/one', { bookingFound, user:req.session.user  });
 });
 
 router.post('/new', async (req, res) => {
@@ -50,7 +50,7 @@ router.post('/new', async (req, res) => {
 // Update a specific booking by ID
 router.get('/:bookingId/update', async (req, res) => {
   const booking = await Booking.findById(req.params.bookingId);
-  res.render('bookings/new', { booking, update: true });
+  res.render('bookings/new', { booking, update: true, user:req.session.user  });
 });
 
 router.post('/:bookingId/update', async (req, res) => {

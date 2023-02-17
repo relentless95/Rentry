@@ -51,6 +51,9 @@
         <ul class="navbar-nav ms-auto text-center">
           <% if (user) { %>
             <li class="nav-item">
+              <a class="nav-link text-dark" href="/properties">Explore</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link text-dark" href="/properties/new">Rent</a>
             </li>
             <li class="nav-item">
@@ -59,9 +62,7 @@
             <li class="nav-item">
               <a class="nav-link text-dark" href="/auth/logout">Logout</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link text-dark" href="/properties">Explore</a>
-            </li>
+
            <% } else { %>
 
           <% } %>
