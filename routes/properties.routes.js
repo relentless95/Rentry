@@ -35,15 +35,16 @@ router.post(
   fileUploader.single("property-cover-image"),
   async (req, res) => {
     const body = req.body;
-    console.log(body);
+    // console.log(body);
+    console.log(req.session)
     console.log(req.file)
     // const owner = req.session.userId;
 
     await Property.create({
       ...body,
       description: body.description,
-      user: "63ebbf7c5ce2ea8ac0f0a14f",
-      // imageUrl: req.file.path, // commented that out
+      user: req.session.user._id,
+      imageUrl: req.file.path, // commented that out
     });
 
     res.redirect("/properties");
@@ -61,6 +62,7 @@ router.post("/:propertyId/update", async (req, res) => {
     ...req.body,
     description: req.body.description,
   });
+  console.log(req.body)
 
   res.redirect(`/properties/${req.params.propertyId}`);
 });

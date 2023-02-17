@@ -5,22 +5,44 @@
     <p class="lead">Find your next stay</p>
   </div>
 </div>
-
-<% if (!hopper.length) { %> There is any property <% } %> <% hopper.forEach(property => { %>
-<div style="border: 1px solid black; margin: 1rem; padding: 1rem">
-  <h2><%=property.title%></h2>
-  <h2><%=property.price%></h2>
-  <h2><%=property.description%></h2>
-  <h2><%=property.location%></h2>
-  <a href="/properties/<%- property._id %>">Details</a>
+<!-- starts here -->
+<div class="container">
+  <% if (!hopper.length) { %>
+    <p>There is nothing available at the moment.</p>
+  <% } else { %>
+    <div class="row row-cols-1 row-cols-md-4">
+      <% hopper.forEach(property => { %>
+        <div class="col mb-4">
+          <div class="card h-100">
+            <img src="<%=property.imageUrl %>" class="card-img-top" alt="<%- property.title %>">
+            
+            <div class="card-body">
+              <h5 class="card-title"><%- property.title %></h5>
+              <p class="card-text"><%- property.price %></p>
+              <p class="card-text"><%- property.location %></p>
+              <a href="/properties/<%- property._id %>" class="btn btn-dark">See More</a>
+            </div>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  <% } %>
 </div>
-<% }) %>
+
+  
+
+<!-- ends here -->
 
 
 <a href="/properties/new">Offer your property for rent</a>
+
+
 <br>
 <a href="/bookings">My bookings</a>
 <form>
   <br>
   <button type="button" onclick="window.history.back()">Go Back</button>
 </form>
+
+
+<!-- new -->

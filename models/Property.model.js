@@ -21,7 +21,7 @@ const propertySchema = new Schema(
     },
     user: {
       type: Schema.Types.ObjectId,
-      required: "User",
+      ref: "User",
     },
     imageUrl: String,
   },

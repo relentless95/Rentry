@@ -1,20 +1,46 @@
-<h1>Property</h1>
-<h2><%= propertyFound.title %></h2>
-<h2><%= propertyFound.description %></h2>
-<h2><%= propertyFound.location %></h2>
-<h2><%= propertyFound.price %></h2>
-<h2><%= propertyFound.user %></h2>
-<form method="GET" action="/properties/<%- propertyFound._id %>/update">
-  <button type="submit">Update</button>
-</form>
-<br>
-<form method="GET" action="/properties/<%- propertyFound._id %>/delete">
-  <button type="submit">Delete</button>
-</form>
-<br>
-<a href="/bookings/new">Book this property</a>
-<br>
-<br>
-<form>
-  <button type="button" onclick="window.history.back()">Go Back</button>
-</form>
+<!-- newest -->
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-5 d-flex flex-row justify-content-start align-items-center">
+      <form method="GET" action="/properties/<%- propertyFound._id %>/update" class="me-3">
+        <button type="submit" class="btn btn-primary">Update</button>
+      </form>
+      <form method="GET" action="/properties/<%- propertyFound._id %>/delete" class="me-3">
+        <button type="submit" class="btn btn-danger">Delete</button>
+      </form>
+      <div class="me-3">
+        <a href="/bookings/new" class="btn btn-secondary">Book</a>
+      </div>
+    </div>
+    <hr class="my-3" style="border-top: 1px solid black;">
+    <div class="col-md-7">
+      <img class="rounded" src="/images/logo-color.png" alt="<%= propertyFound.title %>" style="max-width: 80%; height: 70%;">
+      <div class="d-flex flex-row my-3">
+        <div>
+          <h5 class="text-muted fs-5">Author:</h5>
+          <p><%= propertyFound.user %></p>
+        </div>
+        <div class="mx-3">
+          <h5 class="text-muted fs-5">Price:</h5>
+          <p><%= propertyFound.price %></p>
+        </div>
+        <div>
+          <h5 class="text-muted fs-5">Location:</h5>
+          <p><%= propertyFound.location %></p>
+        </div>
+      </div>
+      <h2 class="text-muted fs-5">Description:</h2>
+      <p><%= propertyFound.description %></p>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-md-12">
+      <form>
+        <button type="button" onclick="window.history.back()" class="btn btn-dark">Return to List</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+

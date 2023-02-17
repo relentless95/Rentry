@@ -72,7 +72,7 @@ router.post("/login", async (req, res, next) => {
     console.log('reaches here1')
 
     if (bcrypt.compareSync(body.password, user.passwordHash)) {
-      const tempUser = {username: user.username, email: user.email};
+      const tempUser = {username: user.username, email: user.email, id: user._id};
     //   console.log(tempUser)
     console.log('reaches here2')
     console.log(req.session)
