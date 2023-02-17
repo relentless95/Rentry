@@ -1,4 +1,4 @@
-const { Schema, model } = require ('mongoose')
+const { Schema, model } = require("mongoose");
 
 const propertySchema = new Schema(
   {
@@ -19,17 +19,18 @@ const propertySchema = new Schema(
       type: Number,
       required: true,
     },
-    owner: {
+    user: {
       type: Schema.Types.ObjectId,
-      required: 'User',
+      required: "User",
     },
+    imageUrl: String,
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`
     timestamps: true,
   }
-)
-  
-const Property = model('Property', propertySchema);
+);
+
+const Property = model("Property", propertySchema);
 
 module.exports = Property;

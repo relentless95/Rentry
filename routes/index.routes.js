@@ -22,7 +22,7 @@ router.get("/profile",isLoggedIn, (req, res, next) => { // the last call back sh
 
 });
 
-router.get("/home", (req, res, next) => { // the last call back should send something to the client
+router.get("/home",isLoggedIn, (req, res, next) => { // the last call back should send something to the client
   console.log("SESSION =====> ", req.session)
   // if(!req.session.user){ // this was when there was no middle ware
   //   res.redirect('/auth/login')
