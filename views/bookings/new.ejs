@@ -14,48 +14,19 @@
     <label for="checkout">CheckOut:</label>
     <input type="date" class="form-control" id="checkout" name="checkOut" value="<% if (update) { %><%= booking.checkOut %><% } %>">
   </div>
-  <button type="submit" class="btn btn-dark btn-lg mb-2 mt-3">
+  <button type="submit" class="btn btn-secondary btn-lg mb-2 mt-3">
     <% if (update) { %>
       Update booking
     <% } else { %>
       Create new booking
     <% } %>
   </button>
-<button type="button" class="btn btn-secondary" onclick="window.history.back()">Go Back</button>
+  <div class="mt-5">
+    <button type="button" class="btn btn-secondary btn-lg btn-dark" onclick="window.history.back()">Go Back</button>
+  </div>
+
 
 </form>
 
 
 <!-- old -->
-<form method="POST" action="<% if (update) { %>
-  /bookings/<%- booking._id %>/update
- <% } else { %>
-  /bookings/new
-<% } %>">
-  <label>
-    Property:
-    <input type="text" name="property" value="<% if (update) { %><%= booking.property %><% } %>" />
-  </label>
-  <label>
-    Owner:
-    <input type="text" name="user" value="<% if (update) { %><%= booking.user %><% } %>" />
-  </label>
-  <label>
-    CheckIn:
-    <input type="date" name="checkIn" value="<% if (update) { %><%= booking.checkIn %><% } %>" />
-  </label>
-  <label>
-    CheckOut:
-    <input type="date" name="checkOut" value="<% if (update) { %><%= booking.checkOut %><% } %>" />
-  </label>
-  <button type="submit">
-    <% if (update) { %>
-      Update booking
-    <% } else { %>
-      Create new booking
-    <% } %>
-  </button>
-</form>
-<form>
-  <button type="button" onclick="window.history.back()">Go Back</button>
-</form>
