@@ -7,15 +7,15 @@ const bookingSchema = new Schema(
         ref: 'Property',
         required: true
     },
-        propertyName: {
-            type: String,
-        },
+    //     propertyName: {
+    //         type: String,
+    //     },
 
-        user: {
-        type: Schema.Types.ObjectId,
-        ref: 'User',
-        required: true
-    },
+    //     user: {
+    //     type: Schema.Types.ObjectId,
+    //     ref: 'User',
+    //     required: true
+    // },
         checkIn: {
         type: Date,
         required: true
@@ -27,9 +27,9 @@ const bookingSchema = new Schema(
     }
 )
 
-bookingSchema.pre('find', function() {
-    this.populate('property', 'name');
-  });
+// bookingSchema.pre('find', function() {
+//     this.populate('property', 'name');
+//   });
   
 const Booking = model('Booking', bookingSchema);
 

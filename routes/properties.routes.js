@@ -10,7 +10,7 @@ router.get("/", async (req, res) => {
   try {
     const allProperties = await Property.find();
     console.log("All properties :", allProperties);
-    res.render("properties/all", { hopper: allProperties });
+    res.render("properties/all", { hopper: allProperties, user: req.session.user});
   } catch (error) {
     console.log("Route to all properties", error);
   }
@@ -18,7 +18,7 @@ router.get("/", async (req, res) => {
 
 // Create a new property
 router.get("/new", isLoggedIn, async (req, res, next) => {
-  res.render("properties/new", { update: false });
+  res.render("properties/new", { update: false, user:req.session.user });
 });
 
 // Get a specific property by ID
@@ -27,7 +27,7 @@ router.get("/:propertyId", async (req, res) => {
     "user"
   );
   console.log({ propertyFound });
-  res.render("properties/one", { propertyFound });
+  res.render("properties/one", { propertyFound, user:req.session.user });
 });
 
 router.post(
@@ -54,7 +54,7 @@ router.post(
 // Update a specific property by ID
 router.get("/:propertyId/update", async (req, res) => {
   const property = await Property.findById(req.params.propertyId);
-  res.render("properties/new", { property, update: true });
+  res.render("properties/new", { property, update: true, user: req.session.user });
 });
 
 router.post("/:propertyId/update", async (req, res) => {
